@@ -1,0 +1,57 @@
+
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.0/slimselect.min.css');
+@import "partials/vars";
+@import "partials/buttons";
+@import "partials/forms";
+@import "partials/typography";
+@import "partials/helpers";
+@import "partials/table";
+@import "partials/misc";
+@import "partials/dropdown";
+@import "partials/tabs";
+@import "partials/responsive";
+@import "partials/modal";
+@import "partials/loader";
+@import "partials/cards";
+
+
+*{
+	box-sizing: border-box;
+}
+html{
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+body{
+	font-family: 'Poppins', 'Roboto', sans-serif;
+	font-size: 15px;
+	display: flex;
+	flex-direction: column;
+	background: var(--background);
+	color: var(--textColor);
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	padding: 0rem;
+	margin: 0rem;
+	font-weight: normal;
+}
+span{
+	display: inline-block;
+}
+a{
+	text-decoration: none;
+}
+.page__title{
+	font-size: 17px;
+	font-weight: bold;
+	border-bottom: 3px solid var(--primary);
+	display: block;
+	width: auto;
+}

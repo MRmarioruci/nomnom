@@ -1,0 +1,44 @@
+@import "vars";
+
+.loader{
+	width: 100%;
+	min-width: 40px;
+	padding: 4px;
+
+	.loader__container {
+		background-color: RGB(var(--textColor-rgb) / 10%);
+		border-radius: 8px;
+		min-height: 8px;
+		min-width: 40px;
+		position: relative;
+		overflow: hidden;
+
+		.loading-bar {
+			position: absolute;
+			height: 8px;
+			border-radius: 8px;
+			background-color: var(--textColor);
+
+			animation-duration: .5s;
+			animation-name: backAndForth;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-timing-function: ease-in-out;
+		}
+		.animated {
+			animation-fill-mode: both;
+		}
+
+	}
+}
+@keyframes backAndForth {
+	from {
+		left: -30%;
+		width: 50%;
+	}
+
+	to {
+		left: 80%;
+		width: 50%;
+	}
+}

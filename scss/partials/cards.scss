@@ -1,0 +1,14 @@
+@import "vars";
+.card{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: var(--radius);
+    background: var(--light);
+    margin: 10px;
+}
+.card--100{
+    width: 100%;
+}
