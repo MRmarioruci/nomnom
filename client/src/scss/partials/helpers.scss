@@ -154,6 +154,9 @@
 .flex--50{
 	flex-basis: 50%;
 }
+.flex__33{
+	flex-basis: 33%;
+}
 
 .flex--column{
 	flex-direction: column;
@@ -285,4 +288,7 @@
 }
 .pbottom--35{
 	margin-bottom: 35px;
+}
+.transparent{
+	background: transparent !important;
 }

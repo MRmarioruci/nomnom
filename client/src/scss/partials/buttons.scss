@@ -21,7 +21,7 @@
 	line-height: 1.25;
 	font-size: 0.9rem;
 	border-radius: $radius;
-	margin: 0rem 0.2rem;
+	margin: 5px;
 	-webkit-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
 	-o-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 	-moz-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -140,10 +140,6 @@ a.btn.disabled,fieldset:disabled a.btn {
 		color: var(--light) !important;
 	}
 }
-.btn-primary-shadow{
-	box-shadow: 0px 15px 20px RGBA(var(--primary-rgb) / 50%);
-}
-
 .btn-primary-outline {
 	background-color: transparent;
 	border-color: var(--primary);
@@ -168,15 +164,32 @@ a.btn.disabled,fieldset:disabled a.btn {
 .btn-primary-outline:hover{
 	color: var(--secondaryTextColor);
 }
-.btn-primary-soft{
-	background-color: RGB(var(--primary-rgb) / 13%);
-	border-color: transparent;
+.btn-primary-outline {
+	background-color: transparent;
+	border-color: var(--primary);
 	color: var(--primary);
-
-	&:hover{
-		color: var(--textColor);
-	}
 }
+.btn-primary-outline.disabled, .btn-primary-outline:disabled {
+	opacity: 0.5;
+}
+
+.btn-primary-outline:not(:disabled):not(.disabled).active,.btn-primary-outline:not(:disabled):not(.disabled):active,.show>.btn-primary-outline.dropdown-toggle {
+	color: var(--secondaryTextColor);
+}
+
+.btn-primary-outline:not(:disabled):not(.disabled).active, .btn-primary-outline:not(:disabled):not(.disabled):active, .show>.btn-primary-outline.dropdown-toggle {
+	color: var(--secondaryTextColor);
+	opacity: 0.6;
+}
+
+.btn-primary-outline:not(:disabled):not(.disabled).active:focus, .btn-primary-outline:not(:disabled):not(.disabled):active:focus, .show>.btn-primary-outline.dropdown-toggle:focus {
+	box-shadow: 0 0 0 1px RGBA(101,176,241,.5)
+}
+.btn-primary-outline:hover{
+	color: var(--secondaryTextColor);
+}
+
+
 
 /* Secondary */
 .btn-secondary {
@@ -202,6 +215,30 @@ a.btn.disabled,fieldset:disabled a.btn {
 	background-color: var(--secondary);
 	border-color: var(--secondary);
 }
+.btn-secondary-outline {
+	background-color: transparent;
+	border-color: var(--secondary);
+	color: var(--secondary);
+}
+.btn-secondary-outline.disabled, .btn-secondary-outline:disabled {
+	opacity: 0.5;
+}
+
+.btn-secondary-outline:not(:disabled):not(.disabled).active,.btn-secondary-outline:not(:disabled):not(.disabled):active,.show>.btn-secondary-outline.dropdown-toggle {
+	color: var(--secondaryTextColor);
+}
+
+.btn-secondary-outline:not(:disabled):not(.disabled).active, .btn-secondary-outline:not(:disabled):not(.disabled):active, .show>.btn-secondary-outline.dropdown-toggle {
+	color: var(--secondaryTextColor);
+	opacity: 0.6;
+}
+
+.btn-secondary-outline:not(:disabled):not(.disabled).active:focus, .btn-secondary-outline:not(:disabled):not(.disabled):active:focus, .show>.btn-secondary-outline.dropdown-toggle:focus {
+	box-shadow: 0 0 0 1px RGBA(101,176,241,.5)
+}
+.btn-secondary-outline:hover{
+	color: var(--secondaryTextColor);
+}
 
 /* Light */
 .btn-light {
@@ -222,6 +259,30 @@ a.btn.disabled,fieldset:disabled a.btn {
 
 .btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show>.btn-light.dropdown-toggle {
 	opacity: 0.6;
+}
+.btn-light-outline {
+	background-color: transparent;
+	border-color: var(--light);
+	color: var(--light);
+}
+.btn-light-outline.disabled, .btn-light-outline:disabled {
+	opacity: 0.5;
+}
+
+.btn-light-outline:not(:disabled):not(.disabled).active,.btn-light-outline:not(:disabled):not(.disabled):active,.show>.btn-light-outline.dropdown-toggle {
+	color: var(--lightTextColor);
+}
+
+.btn-light-outline:not(:disabled):not(.disabled).active, .btn-light-outline:not(:disabled):not(.disabled):active, .show>.btn-light-outline.dropdown-toggle {
+	color: var(--lightTextColor);
+	opacity: 0.6;
+}
+
+.btn-light-outline:not(:disabled):not(.disabled).active:focus, .btn-light-outline:not(:disabled):not(.disabled):active:focus, .show>.btn-light-outline.dropdown-toggle:focus {
+	box-shadow: 0 0 0 1px RGBA(101,176,241,.5)
+}
+.btn-light-outline:hover{
+	color: var(--lightTextColor);
 }
 
 /* Transparent */
@@ -270,6 +331,30 @@ a.btn.disabled,fieldset:disabled a.btn {
 	&:hover{
 		color: var(--textColor);
 	}
+}
+.btn-success-outline {
+	background-color: transparent;
+	border-color: var(--success);
+	color: var(--success);
+}
+.btn-success-outline.disabled, .btn-success-outline:disabled {
+	opacity: 0.5;
+}
+
+.btn-success-outline:not(:disabled):not(.disabled).active,.btn-success-outline:not(:disabled):not(.disabled):active,.show>.btn-success-outline.dropdown-toggle {
+	color: var(--successTextColor);
+}
+
+.btn-success-outline:not(:disabled):not(.disabled).active, .btn-success-outline:not(:disabled):not(.disabled):active, .show>.btn-success-outline.dropdown-toggle {
+	color: var(--successTextColor);
+	opacity: 0.6;
+}
+
+.btn-success-outline:not(:disabled):not(.disabled).active:focus, .btn-success-outline:not(:disabled):not(.disabled):active:focus, .show>.btn-success-outline.dropdown-toggle:focus {
+	box-shadow: 0 0 0 1px RGBA(101,176,241,.5)
+}
+.btn-success-outline:hover{
+	color: var(--successTextColor);
 }
 
 /* Danger */
