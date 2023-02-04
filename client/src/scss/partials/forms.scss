@@ -81,7 +81,7 @@
 }
 
 .md__input input[type=checkbox]:not(.switch) {
-	border-radius: $radius;
+	border-radius: var(--radius);
 }
 .md__input input[type=checkbox]:not(.switch):after {
 	width: 7px;
@@ -120,7 +120,7 @@
 	width: 50px;
 	border-radius: 15px;
 	height: 29px;
-	
+
 }
 .md__input-lg input[type=checkbox].switch:after {
 	left: 7px;
@@ -155,16 +155,16 @@ input[type=text], input[type=password], input[type=email], input[type=number], i
 	vertical-align: top;
 	margin: 0;
 	padding: 0.2rem 1rem !important;
-	border-radius: $radius;
+	border-radius: var(--radius);
 	background: var(--secondary);
 	color: var(--textColor);
 	border: 2px solid var(--secondary);
-	border-radius: $radius;
+	border-radius: var(--radius);
 	font-weight: 500;
 	font-size: 14px;
 	outline: none;
 	width: 100%;
-	
+
 	&::placeholder{
 		color: var(--textColor);
 	}
@@ -198,7 +198,7 @@ textarea{
 	width: 100%;
 	font-weight: 500;
 	font-size: 14px;
-	
+
 	&::placeholder{
 		color: var(--textColor);
 	}
@@ -231,7 +231,7 @@ textarea{
 }
 .editable__inputEditing{
 	position: relative;
-	
+
 	button{
 		position: absolute;
 		right: 0;
@@ -247,16 +247,16 @@ textarea{
 	padding: 5px;
 	position: relative;
 	cursor: pointer;
-	
+
 	.btn{
 		display: none;
 		position: absolute;
 		right: 2px;
 	}
-	
+
 	&:hover{
 		border: 2px dashed RGB(var(--textColor-rgb) / 30%);
-		
+
 		.btn{
 			display: inline-block;
 		}
@@ -298,7 +298,7 @@ input:disabled{
 		cursor: pointer;
 		width: 100%;
 	}
-	
+
 	&:hover{
 		border: 2px dashed RGB(var(--textColor-rgb) / 80%);
 	}
@@ -324,4 +324,13 @@ input:disabled{
 		background: var(--light) !important;
 		border-bottom: 2px solid var(--primary) !important;
 	}
+}
+
+
+
+
+
+
+.form__group{
+	margin: 15px 0px;
 }

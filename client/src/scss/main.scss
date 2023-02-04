@@ -99,3 +99,20 @@ a{
 		z-index: 1;
 	}
 }
+.theme__switch{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.card__title{
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: var(--textColor);
+	background: var(--background);
+	border-right: 1px dashed var(--primary);
+	border-bottom: 1px dashed var(--primary);
+	padding: 3px 8px;
+	border-bottom-right-radius: 10px;
+	font-size: 11px;
+}

@@ -43,7 +43,7 @@ $easing: cubic-bezier(.55,0,.1,1);
 	background-color: var(--light);
 	max-width: 100%;
 	width: 600px;
-	border-radius: $radius;
+	border-radius: var(--radius);
 	opacity: 0;
 	overflow: hidden;
 	visibility: hidden;
@@ -89,8 +89,8 @@ $easing: cubic-bezier(.55,0,.1,1);
 
 			&:hover{
 				path{
-					fill: var(--danger) !important;	
-				}				
+					fill: var(--danger) !important;
+				}
 			}
 		}
 	}
