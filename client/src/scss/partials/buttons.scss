@@ -8,9 +8,9 @@
 	-ms-user-select:none;
 	user-select:none;
 	border: 1px solid transparent;
-	padding: 0.65rem 1rem;
+	padding: 11px 16px;
 	line-height: 1.25;
-	font-size: 0.9rem;
+	font-size: 1rem;
 	border-radius: var(--radius);
 	margin: 5px;
 	-webkit-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
@@ -21,9 +21,8 @@
 	outline: none;
 	cursor: pointer;
 	font-family: var(--fontFamily);
-}
-.btn-shadow{
-	box-shadow: 0px 8px 15px RGBA(var(--textColor-rgb) / 10%);
+	font-weight: 400;
+	line-height: 1.5;
 }
 .btn > *{
 	vertical-align: middle;
@@ -111,10 +110,9 @@ a.btn.disabled,fieldset:disabled a.btn {
 	border-color: RGB(var(--primary-rgb) / 90%);
 }
 .btn-primary-soft {
-	background-color: RGB( var(--primary-rgb) / 10% );
+	background-color: RGB( var(--primary-rgb) / 20% );
 	color: var(--primary);
-	font-weight: 650;
-	border: 1px solid RGB( var(--primary-rgb) / 10% );
+	border: 1px solid RGB( var(--primary-rgb) / 20% );
 }
 .btn-primary-soft.disabled, .btn-primary-soft:disabled {
 	opacity: 0.5;
@@ -123,7 +121,7 @@ a.btn.disabled,fieldset:disabled a.btn {
 	color: var(--textColor);
 }
 .btn-primary-soft{
-	background-color: RGB(var(--primary-rgb) / 13%);
+	background-color: RGB(var(--primary-rgb) / 20%);
 	border-color: transparent;
 	color: var(--primary);
 
@@ -131,8 +129,18 @@ a.btn.disabled,fieldset:disabled a.btn {
 		color: var(--light) !important;
 	}
 }
+.btn-primary-bordered{
+	border-color: var(--primary);
+}
 .btn-primary-shadow{
-	box-shadow: 0px 8px 15px RGBA(var(--primary-rgb) / 10%);
+	box-shadow: RGBA(var(--primary-rgb) / 10%) 0px 10px 15px -3px, RGBA(var(--primary-rgb) / 50%) 0px 4px 6px -2px;
+}
+.btn-primary-3d{
+	//box-shadow:  RGBA(var(--primary-rgb) / 40%) -5px 5px, RGBA(var(--primary-rgb) / 30%) -10px 10px,  RGBA(var(--primary-rgb) / 20%) -15px 15px,  RGBA(var(--primary-rgb) / 10%) -20px 20px,  RGBA(var(--primary-rgb) / 5%) -25px 25px;
+	box-shadow:  RGBA(var(--primary-rgb) / 40%) -3px 3px, RGBA(var(--primary-rgb) / 30%) -6px 6px;
+	background-color: transparent;
+	border-color: var(--primary);
+	color: var(--primary);
 }
 .btn-primary-outline {
 	background-color: transparent;
@@ -190,7 +198,6 @@ a.btn.disabled,fieldset:disabled a.btn {
 	background-color: var(--secondary);
 	border-color: var(--secondary);
 	color: var(--textColor);
-	font-weight: 550;
 }
 .btn-secondary:hover{
 	opacity: 0.6;
@@ -234,15 +241,23 @@ a.btn.disabled,fieldset:disabled a.btn {
 	color: var(--secondaryTextColor);
 }
 .btn-secondary-shadow{
-	box-shadow: 0px 8px 15px RGBA(var(--secondary-rgb) / 10%);
+	box-shadow: RGBA(var(--scondary-rgb) / 10%) 0px 10px 15px -3px, RGBA(var(--scondary-rgb) / 50%) 0px 4px 6px -2px;
 }
-
+.btn-secondary-bordered{
+	border-color: var(--secondary);
+}
+.btn-secondary-3d{
+	//box-shadow:  RGBA(var(--primary-rgb) / 40%) -5px 5px, RGBA(var(--primary-rgb) / 30%) -10px 10px,  RGBA(var(--primary-rgb) / 20%) -15px 15px,  RGBA(var(--primary-rgb) / 10%) -20px 20px,  RGBA(var(--primary-rgb) / 5%) -25px 25px;
+	box-shadow:  RGBA(var(--secondary-rgb) / 40%) -5px 5px;
+	background-color: transparent;
+	border-color: var(--secondary);
+	color: var(--textColor);
+}
 /* Light */
 .btn-light {
 	background-color: var(--light);
 	border-color: var(--light);
 	color: var(--textColor);
-	font-weight: 600;
 }
 .btn-light:hover{
 	opacity: 1.3;
@@ -253,14 +268,13 @@ a.btn.disabled,fieldset:disabled a.btn {
 .btn-light.disabled, .btn-light:disabled {
 	opacity: 0.5;
 }
-
 .btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show>.btn-light.dropdown-toggle {
 	opacity: 0.6;
 }
 .btn-light-outline {
 	background-color: transparent;
 	border-color: var(--light);
-	color: var(--light);
+	color: var(--textColor);
 }
 .btn-light-outline.disabled, .btn-light-outline:disabled {
 	opacity: 0.5;
@@ -274,7 +288,6 @@ a.btn.disabled,fieldset:disabled a.btn {
 	color: var(--lightTextColor);
 	opacity: 0.6;
 }
-
 .btn-light-outline:not(:disabled):not(.disabled).active:focus, .btn-light-outline:not(:disabled):not(.disabled):active:focus, .show>.btn-light-outline.dropdown-toggle:focus {
 	box-shadow: 0 0 0 1px RGBA(101,176,241,.5)
 }
@@ -282,7 +295,17 @@ a.btn.disabled,fieldset:disabled a.btn {
 	color: var(--lightTextColor);
 }
 .btn-light-shadow{
-	box-shadow: 0px 8px 15px RGBA(var(--light-rgb) / 10%);
+	box-shadow: RGBA(var(--light-rgb) / 10%) 0px 10px 15px -3px, RGBA(var(--light-rgb) / 50%) 0px 4px 6px -2px;
+}
+.btn-light-bordered{
+	border-color: var(--light);
+}
+.btn-light-3d{
+	//box-shadow:  RGBA(var(--primary-rgb) / 40%) -5px 5px, RGBA(var(--primary-rgb) / 30%) -10px 10px,  RGBA(var(--primary-rgb) / 20%) -15px 15px,  RGBA(var(--primary-rgb) / 10%) -20px 20px,  RGBA(var(--primary-rgb) / 5%) -25px 25px;
+	box-shadow:  RGBA(var(--light-rgb) / 40%) -5px 5px;
+	background-color: transparent;
+	border-color: var(--light);
+	color: var(--textColor);
 }
 
 /* Transparent */
@@ -290,7 +313,6 @@ a.btn.disabled,fieldset:disabled a.btn {
 	background-color: transparent;
 	border-color: transparent;
 	color: var(--textColor);
-	font-weight: 600;
 }
 .btn-transparent:hover{
 	opacity: 0.7;
@@ -304,13 +326,21 @@ a.btn.disabled,fieldset:disabled a.btn {
 .btn-transparent:not(:disabled):not(.disabled).active, .btn-transparent:not(:disabled):not(.disabled):active, .show>.btn-transparent.dropdown-toggle {
 	opacity: 0.6;
 }
+.btn-light-soft{
+	background-color: RGB(var(--light-rgb) / 20%);
+	border-color: transparent;
+	color: var(--textColor);
+
+	&:hover{
+		color: var(--textColor);
+	}
+}
 
 /* Success */
 .btn-success {
 	background-color: var(--success);
 	border-color: var(--success);
 	color: var(--secondaryTextColor);
-	font-weight: 600;
 }
 .btn-success:hover{
 	color: #fff;
@@ -324,7 +354,7 @@ a.btn.disabled,fieldset:disabled a.btn {
 	opacity: 0.6;
 }
 .btn-success-soft{
-	background-color: RGB(var(--success-rgb) / 13%);
+	background-color: RGB(var(--success-rgb) / 20%);
 	border-color: transparent;
 	color: var(--success);
 
@@ -357,16 +387,24 @@ a.btn.disabled,fieldset:disabled a.btn {
 	color: var(--success);
 }
 .btn-success-shadow{
-	box-shadow: 0px 8px 15px RGBA(var(--light-rgb) / 10%);
+	box-shadow: RGBA(var(--success-rgb) / 10%) 0px 10px 15px -3px, RGBA(var(--success-rgb) / 50%) 0px 4px 6px -2px;
 }
-
+.btn-success-bordered{
+	border-color: var(--success);
+}
+.btn-success-3d{
+	//box-shadow:  RGBA(var(--primary-rgb) / 40%) -5px 5px, RGBA(var(--primary-rgb) / 30%) -10px 10px,  RGBA(var(--primary-rgb) / 20%) -15px 15px,  RGBA(var(--primary-rgb) / 10%) -20px 20px,  RGBA(var(--primary-rgb) / 5%) -25px 25px;
+	box-shadow:  RGBA(var(--success-rgb) / 40%) -5px 5px;
+	background-color: transparent;
+	border-color: var(--success);
+	color: var(--success);
+}
 
 /* Danger */
 .btn-danger {
 	background-color: var(--danger);
 	border-color: var(--danger);
 	color: #fff;
-	font-weight: 600;
 }
 .btn-danger:hover{
 	color: #fff;
@@ -378,7 +416,7 @@ a.btn.disabled,fieldset:disabled a.btn {
 	opacity: 0.6;
 }
 .btn-danger-soft{
-	background-color: RGB(var(--danger-rgb) / 13%);
+	background-color: RGB(var(--danger-rgb) / 20%);
 	border-color: transparent;
 	color: var(--danger);
 
@@ -394,16 +432,13 @@ a.btn.disabled,fieldset:disabled a.btn {
 .btn-danger-outline.disabled, .btn-danger-outline:disabled {
 	opacity: 0.5;
 }
-
 .btn-danger-outline:not(:disabled):not(.disabled).active,.btn-danger-outline:not(:disabled):not(.disabled):active,.show>.btn-danger-outline.dropdown-toggle {
 	color: var(--danger);
 }
-
 .btn-danger-outline:not(:disabled):not(.disabled).active, .btn-danger-outline:not(:disabled):not(.disabled):active, .show>.btn-danger-outline.dropdown-toggle {
 	color: var(--danger);
 	opacity: 0.6;
 }
-
 .btn-danger-outline:not(:disabled):not(.disabled).active:focus, .btn-danger-outline:not(:disabled):not(.disabled):active:focus, .show>.btn-danger-outline.dropdown-toggle:focus {
 	box-shadow: 0 0 0 1px RGBA(101,176,241,.5)
 }
@@ -411,7 +446,17 @@ a.btn.disabled,fieldset:disabled a.btn {
 	color: var(--danger);
 }
 .btn-danger-shadow{
-	box-shadow: 0px 8px 15px RGBA(var(--danger-rgb) / 10%);
+	box-shadow: RGBA(var(--danger-rgb) / 10%) 0px 10px 15px -3px, RGBA(var(--danger-rgb) / 50%) 0px 4px 6px -2px;
+}
+.btn-danger-bordered{
+	border-color: var(--danger);
+}
+.btn-danger-3d{
+	//box-shadow:  RGBA(var(--primary-rgb) / 40%) -5px 5px, RGBA(var(--primary-rgb) / 30%) -10px 10px,  RGBA(var(--primary-rgb) / 20%) -15px 15px,  RGBA(var(--primary-rgb) / 10%) -20px 20px,  RGBA(var(--primary-rgb) / 5%) -25px 25px;
+	box-shadow:  RGBA(var(--danger-rgb) / 40%) -5px 5px;
+	background-color: transparent;
+	border-color: var(--danger);
+	color: var(--danger);
 }
 
 /* Warning */
@@ -419,7 +464,6 @@ a.btn.disabled,fieldset:disabled a.btn {
 	background-color: var(--warning);
 	border-color: var(--warning);
 	color: #fff;
-	font-weight: 600;
 }
 .btn-warning:hover{
 	color: #fff;
@@ -431,7 +475,7 @@ a.btn.disabled,fieldset:disabled a.btn {
 	opacity: 0.6;
 }
 .btn-warning-soft{
-	background-color: RGB(var(--warning-rgb) / 13%);
+	background-color: RGB(var(--warning-rgb) / 20%);
 	border-color: transparent;
 	color: var(--warning);
 
@@ -447,16 +491,13 @@ a.btn.disabled,fieldset:disabled a.btn {
 .btn-warning-outline.disabled, .btn-warning-outline:disabled {
 	opacity: 0.5;
 }
-
 .btn-warning-outline:not(:disabled):not(.disabled).active,.btn-warning-outline:not(:disabled):not(.disabled):active,.show>.btn-warning-outline.dropdown-toggle {
 	color: var(--warning);
 }
-
 .btn-warning-outline:not(:disabled):not(.disabled).active, .btn-warning-outline:not(:disabled):not(.disabled):active, .show>.btn-warning-outline.dropdown-toggle {
 	color: var(--warning);
 	opacity: 0.6;
 }
-
 .btn-warning-outline:not(:disabled):not(.disabled).active:focus, .btn-warning-outline:not(:disabled):not(.disabled):active:focus, .show>.btn-warning-outline.dropdown-toggle:focus {
 	box-shadow: 0 0 0 1px RGBA(101,176,241,.5)
 }
@@ -464,14 +505,23 @@ a.btn.disabled,fieldset:disabled a.btn {
 	color: var(--warning);
 }
 .btn-warning-shadow{
-	box-shadow: 0px 8px 15px RGBA(var(--warning-rgb) / 10%);
+	box-shadow: RGBA(var(--warning-rgb) / 10%) 0px 10px 15px -3px, RGBA(var(--warning-rgb) / 50%) 0px 4px 6px -2px;
+}
+.btn-warning-bordered{
+	border-color: var(--warning);
+}
+.btn-warning-3d{
+	//box-shadow:  RGBA(var(--primary-rgb) / 40%) -5px 5px, RGBA(var(--primary-rgb) / 30%) -10px 10px,  RGBA(var(--primary-rgb) / 20%) -15px 15px,  RGBA(var(--primary-rgb) / 10%) -20px 20px,  RGBA(var(--primary-rgb) / 5%) -25px 25px;
+	box-shadow:  RGBA(var(--warning-rgb) / 40%) -5px 5px;
+	background-color: transparent;
+	border-color: var(--warning);
+	color: var(--warning);
 }
 
 .btn-inverted {
 	background-color: var(--textColor);
 	border-color: var(--textColor);
 	color: var(--background);
-	font-weight: 600;
 }
 .btn-inverted:hover{
 	color: RGBA(var(--background-rgb) / 20%);
@@ -483,7 +533,7 @@ a.btn.disabled,fieldset:disabled a.btn {
 	opacity: 0.6;
 }
 .btn-inverted-soft{
-	background-color: RGB(var(--textColor-rgb) / 13%);
+	background-color: RGB(var(--textColor-rgb) / 80%);
 	border-color: transparent;
 	color: var(--background);
 
@@ -494,15 +544,25 @@ a.btn.disabled,fieldset:disabled a.btn {
 .btn-inverted-outline {
 	background-color: transparent;
 	border-color: var(--textColor);
-	color: var(--background);
+	color: var(--textColor);
 }
 .btn-inverted-shadow{
-	box-shadow: 0px 8px 15px RGBA(var(--textColor-rgb) / 10%);
+	box-shadow: RGBA(var(--textColor-rgb) / 10%) 0px 10px 15px -3px, RGBA(var(--textColor-rgb) / 50%) 0px 4px 6px -2px;
+}
+.btn-inverted-bordered{
+	border-color: var(--textColor);
+}
+.btn-inverted-3d{
+	//box-shadow:  RGBA(var(--primary-rgb) / 40%) -5px 5px, RGBA(var(--primary-rgb) / 30%) -10px 10px,  RGBA(var(--primary-rgb) / 20%) -15px 15px,  RGBA(var(--primary-rgb) / 10%) -20px 20px,  RGBA(var(--primary-rgb) / 5%) -25px 25px;
+	box-shadow:  RGBA(var(--textColor-rgb) / 40%) -5px 5px;
+	background-color: transparent;
+	border-color: var(--textColor);
+	color: var(--textColor);
 }
 
 .btn-lg{
-    padding: 0.7rem 1.5rem;
-    font-size: 1.1rem;
+    padding: 12px 20px;
+    font-size: 1.2rem;
 }
 .btn-md{
 	padding: .45rem .8rem;
@@ -522,7 +582,7 @@ a.btn.disabled,fieldset:disabled a.btn {
 	overflow: hidden;
 }
 .btn-rounded{
-	border-radius: 20px;
+	border-radius: 40px;
 }
 .btn-group{
 	margin: 0px !important;

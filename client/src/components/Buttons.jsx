@@ -5,6 +5,7 @@ function Buttons() {
 	const [sizes, setSizes] = useState([])
 	const [shadow, setShadow] = useState(false)
 	const [rounded, setRounded] = useState(false)
+	const [bordered, setBordered] = useState(false)
 	const availableButtons = ['primary', 'secondary', 'inverted', 'success', 'danger', 'warning', 'light'];
 	const getActiveSizeCss = (targetSize) => {
 		let o = 'btn btn-md ';
@@ -34,7 +35,7 @@ function Buttons() {
 			'small': 'btn-sm',
 		}
 		size = sizesMap[size];
-		return `btn ${size} btn-${button}${type && '-'+type} capitalize ${shadow ? `btn-${button}-shadow` : ''} ${rounded ? `btn-rounded` : ''}`
+		return `btn ${size} btn-${button}${type && '-'+type} capitalize ${shadow ? `btn-${button}-shadow` : ''} ${rounded ? `btn-rounded` : ''} ${bordered ? `btn-${button}-bordered` : ''}`
 	}
 	const copyButtonCss = (type, size, button) => {
 		let css = calcButtonCss(type, size, button);
@@ -49,17 +50,17 @@ function Buttons() {
 								<div className="card__title capitalize">{size} Size</div>
 								<div className="mtop--20 buttons__wrapper">
 								{ availableButtons.map( (button, idx) => {
-										return (	
-											<>
+										return (
+											<span key={`button__${type}__${idx}`}>
 												<CopyToClipboard text={copyButtonCss(type, size, button)}>
-													<button key={`button__${type}__${idx}`} className={calcButtonCss(type, size, button)}>
+													<button className={calcButtonCss(type, size, button)}>
 														<div className="mainText">{button}</div>
 														<div className="copyText">Click & copy</div>
 													</button>
 												</CopyToClipboard>
-											</>
+											</span>
 										)
-									})							
+									})
 								}
 								</div>
 							</div>
@@ -68,7 +69,7 @@ function Buttons() {
 				}
 			</div>
 		)
-		
+
 	}
 	useEffect(() => {
 		setSizes(['normal'])
@@ -82,6 +83,8 @@ function Buttons() {
 				{ mapButtons('soft') }
 				<label className="text--bold mleft--10">Bordered</label>
 				{ mapButtons('outline') }
+				<label className="text--bold mleft--10">3D</label>
+				{ mapButtons('3d') }
 			</div>
 			<div className="page__content-right">
 				<div className="card card__glass">
@@ -108,6 +111,13 @@ function Buttons() {
 							<div className="btn__group-rounded">
 								<div className={ !rounded ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setRounded(true)}>Yes</div>
 								<div className={ rounded ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setRounded(false)}>No</div>
+							</div>
+						</div>
+						<div className="form__group">
+							<label>Bordered</label>
+							<div className="btn__group-rounded">
+								<div className={ !bordered ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setBordered(true)}>Yes</div>
+								<div className={ bordered ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setBordered(false)}>No</div>
 							</div>
 						</div>
 					</div>

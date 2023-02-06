@@ -8,8 +8,8 @@
 	--secondaryTextColor: #F6F8FF;
 	--secondaryTextColor-rgb: 246 248 255;
 
-	--primary: #1D9BF0;	
-	--primary-rgb: 29 155 240;
+	--primary: #3e64ff;
+	--primary-rgb: 62 100 255;
 
 	--secondary: #EFF5F5;
 	--secondary-rgb: 239 245 245;
@@ -26,7 +26,7 @@
 	--warning: #FF9F29;
 	--warning-rgb: 255 159 41;
 
-	--radius: 3px;
+	--radius: 2px;
 	--fontFamily: 'Poppins', sans-serif;
 }
 [data-theme='dark']{
@@ -57,7 +57,7 @@
 	--warning: #F9A826;
 	--warning-rgb: 249 168 38;
 
-	--radius: .3em;
+	--radius: 2px;
 	--fontFamily: 'Poppins', sans-serif;
 }
 [data-theme='navy']{
@@ -88,6 +88,6 @@
 	--warning: #F9A826;
 	--warning-rgb: 249 168 38;
 
-	--radius: .3em;
+	--radius: 2px;
 	--fontFamily: 'Poppins', sans-serif;
 }

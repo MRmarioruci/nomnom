@@ -83,11 +83,15 @@ function ThemePicker(){
 		loadFonts()
 	}, [])
     useEffect(() => {
+		let font = currentFont;
 		const root = document.documentElement;
-		if(currentFont != 'Poppins'){
-			load({[currentFont]: ['400', '400i', '700', '800']});
+		if(font){
+			load({[font]: ['400', '400i', '700', '800']});
+		}else{
+			font = getComputedStyle(document.documentElement).getPropertyValue('--fontFamily')
 		}
-        root.style.setProperty('--fontFamily', currentFont ? currentFont : 'Poppins')
+		console.log(font);
+        root.style.setProperty('--fontFamily', font)
     }, [currentFont])
 	const update = (key) => {
 		const root = document.documentElement;
@@ -157,7 +161,7 @@ function ThemePicker(){
 					</label>
 				</div>
 			}
-			{ customizationModal && 
+			{ customizationModal &&
 				<div className="modal-overlay active modal__right">
 					<div className="modal active modal--lg modal__right">
 						<div className="modal__header">
@@ -255,7 +259,7 @@ function ThemePicker(){
 									<div className="form__group">
 										<label>Family</label>
 										<Select options={availableFonts} onChange={(value) => setCurrentFont(value[0]['value'])}/>
-									</div> 
+									</div>
 								</div>
 							</div>
 							<div className="modal__footer text--right ">

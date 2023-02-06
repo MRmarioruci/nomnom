@@ -2,13 +2,14 @@ import { useEffect } from 'react';
 import './scss/main.scss';
 import Buttons from './components/Buttons'
 import Typography from './components/Typography'
+import Forms from './components/Forms'
 import ThemePicker from './components/ThemePicker'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
 	//const location = useLocation();
-	
+
 	useEffect(() => {
 	}, [])
 	return (
@@ -82,6 +83,7 @@ function App() {
 					<Route path="/" element={<Buttons />} />
 					<Route path="/Typography" element={<Typography />} />
 					<Route path="/Button" element={<Buttons />} />
+					<Route path="/Form" element={<Forms />} />
 				</Routes>
 			</BrowserRouter>
 		</div>
