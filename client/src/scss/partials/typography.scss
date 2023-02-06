@@ -1,31 +1,31 @@
 @import 'vars';
 a{
-	color: var(--primary) !important;
+	color: var(--primary);
 	cursor: pointer;
 }
 /* TYPOGRAPHY */
 h1{
-	font-size: 2rem;
+	font-size: 4rem;
 	margin: 0.1rem;
 }
 h2{
-	font-size: 1.5rem;
+	font-size: 3rem;
 	margin: 0.1rem;
 }
 h3{
-	font-size: 1.2rem;
+	font-size: 2rem;
 	margin: 0.1rem;
 }
 h4{
-	font-size: 1rem;
+	font-size: 1.5rem;
 	margin: 0.1rem;
 }
 h5{
-	font-size: 0.8rem;
+	font-size: 1rem;
 	margin: 0.1rem;
 }
 h6{
-	font-size: 0.6rem;
+	font-size: 0.8rem;
 	margin: 0.1rem;
 }
 p{
@@ -40,12 +40,12 @@ div{
 .text--boldest{
 	font-weight: 900;
 }
-.text--muted{
-	opacity: 0.6;
-}
 .text--normal{
 	font-weight: 450 !important;
 	color: var(--textColor) !important;
+}
+.text--muted{
+	opacity: 0.6;
 }
 .text--semi-muted{
 	opacity: 0.7;
@@ -56,7 +56,6 @@ div{
 .text--label{
 	color: var(--textColor) !important;
 	font-weight: bold !important;
-	font-family: 'Poppins', 'Roboto', sans-serif;
 }
 .text--primary{
 	color: var(--primary) !important;
@@ -124,14 +123,41 @@ div{
 .font--25{
 	font-size: 25px;
 }
+.font--26{
+	font-size: 26px;
+}
+.font--27{
+	font-size: 27px;
+}
+.font--28{
+	font-size: 28px;
+}
+.font--29{
+	font-size: 29px;
+}
 .font--30{
 	font-size: 30px;
+}
+.font--31{
+	font-size: 32px;
+}
+.font--32{
+	font-size: 32px;
+}
+.font--33{
+	font-size: 33px;
+}
+.font--34{
+	font-size: 34px;
 }
 .font--35{
 	font-size: 35px;
 }
 .font--40{
 	font-size: 40px;		
+}
+.font--45{
+	font-size: 45px;		
 }
 .font--55{
 	font-size: 55px;
@@ -144,15 +170,6 @@ div{
 	text-align: left;
 }
 .text--right{
-	text-align: right;
-}
-.align--center{
-	align-self: center;
-}
-.align--left{
-	text-align: left;
-}
-.align--right{
 	text-align: right;
 }
 .capitalize{

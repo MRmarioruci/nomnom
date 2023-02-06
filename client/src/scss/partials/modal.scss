@@ -16,7 +16,6 @@ $easing: cubic-bezier(.55,0,.1,1);
 	font-size: 15px;
 	color: var(--textColor);
 	//background-color: RGB(var(--light-rgb) / 75%);
-	background-color: RGB(var(--light-rgb) / 75%);
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 	opacity: 0;
@@ -51,6 +50,7 @@ $easing: cubic-bezier(.55,0,.1,1);
 	backface-visibility: hidden;
 	transition: all $speed $easing;
 	height: auto;
+	animation: fadeIn .3s;
 
 	.modal__header{
 		display: flex;
@@ -154,25 +154,12 @@ $easing: cubic-bezier(.55,0,.1,1);
 .modal--xl{
 	width: 70%;
 }
-.modal__notLogged{
-	width: 100%;
-	position: fixed;
-	bottom: 0px;
-	left: 0px;
-	padding: 15px;
-	background-color: var(--light);
-	z-index: 9999;
-
-	svg {
-		position: absolute;
-		left: 5px;
-		top: 5px;
-		width: 2em;
-		height: 2em;
-		cursor: pointer !important;
-
-		path{
-			fill: var(--textColor);
-		}
-	}
-}
+ @-webkit-keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+ }
+ 
+ @keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+ }

@@ -1,77 +1,119 @@
-function Buttons() {
-	return (
-		<>
-            <label className="text--bold mleft--10">Default</label>
-			<div className="flex flex--row">
-				<div className="mtop--20 card">
-					<div className="card__title">Normal Size</div>
-					<div className="mtop--20">
-						<button type="button" className="btn btn-primary">Primary</button>
-						<button type="button" className="btn btn-secondary">Secondary</button>
-						<button type="button" className="btn btn-success">Success</button>
-						<button type="button" className="btn btn-danger">Danger</button>
-                        <button type="button" className="btn btn-warning">Warning</button>
-						<button type="button" className="btn btn-light">Light</button>
-						<button type="button" className="btn btn-inverted">Inverted</button>
-					</div>
-				</div>
-				<div className="mtop--20 card">
-					<div className="card__title">Medium Size</div>
-					<div className="mtop--20">
-						<button type="button" className="btn btn-primary btn-md">Primary</button>
-						<button type="button" className="btn btn-secondary btn-md">Secondary</button>
-						<button type="button" className="btn btn-success btn-md">Success</button>
-						<button type="button" className="btn btn-danger btn-md">Danger</button>
-                        <button type="button" className="btn btn-warning btn-md">Warning</button>
-						<button type="button" className="btn btn-light btn-md">Light</button>
-						<button type="button" className="btn btn-inverted btn-md">Inverted</button>
-					</div>
-				</div>
-				<div className="mtop--20 card">
-					<div className="card__title">Small Size</div>
-					<div className="mtop--20">
-						<button type="button" className="btn btn-primary btn-sm">Primary</button>
-						<button type="button" className="btn btn-secondary btn-sm">Secondary</button>
-						<button type="button" className="btn btn-success btn-sm">Success</button>
-						<button type="button" className="btn btn-danger btn-sm">Danger</button>
-                        <button type="button" className="btn btn-warning btn-sm">Warning</button>
-						<button type="button" className="btn btn-light btn-sm">Light</button>
-						<button type="button" className="btn btn-inverted btn-sm">Inverted</button>
-					</div>
-				</div>
-			</div>
-            <label className="text--bold mleft--10">Soft</label>
-			<div className="mtop--20 flex flex--row">
-				<div className="mtop--20 card ">
-					<div className="card__title">Normal Size</div>
-					<div className="mtop--20">
-						<button type="button" className="btn btn-primary btn-primary-soft">Primary</button>
-						<button type="button" className="btn btn-secondary btn-secondary-soft">Secondary</button>
-						<button type="button" className="btn btn-success btn-success-soft">Success</button>
-						<button type="button" className="btn btn-danger btn-danger-soft">Danger</button>
-                        <button type="button" className="btn btn-warning btn-warning-soft">Warning</button>
-						<button type="button" className="btn btn-light btn-light-soft">Light</button>
-						<button type="button" className="btn btn-inverted btn-inverted-soft">Inverted</button>
-					</div>
-				</div>
-			</div>
+import {useState, useEffect} from 'react';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
-            <label className="text--bold mleft--10">Bordered</label>
-			<div className="mtop--20 flex flex--row">
-				<div className="mtop--20 card ">
-					<div className="card__title">Normal Size</div>
-					<div className="mtop--20">
-						<button type="button" className="btn btn-primary btn-primary-outline">Primary</button>
-						<button type="button" className="btn btn-secondary btn-secondary-outline">Secondary</button>
-						<button type="button" className="btn btn-success btn-success-outline">Success</button>
-						<button type="button" className="btn btn-danger btn-danger-outline">Danger</button>
-                        <button type="button" className="btn btn-warning btn-warning-outline">Warning</button>
-						<button type="button" className="btn btn-light btn-light-outline">Light</button>
-						<button type="button" className="btn btn-inverted btn-inverted-outline">Inverted</button>
+function Buttons() {
+	const [sizes, setSizes] = useState([])
+	const [shadow, setShadow] = useState(false)
+	const [rounded, setRounded] = useState(false)
+	const availableButtons = ['primary', 'secondary', 'inverted', 'success', 'danger', 'warning', 'light'];
+	const getActiveSizeCss = (targetSize) => {
+		let o = 'btn btn-md ';
+		let f = sizes.filter( size => size == targetSize)
+		if(f.length > 0){
+			o += 'btn-inverted';
+		}else{
+			o += 'btn-secondary';
+		}
+		return o;
+	}
+	const addSize = (targetSize) => {
+		let f = sizes.filter( size => size == targetSize)
+		if(f.length > 0){
+			const filteredSizes = sizes.filter( size => size != targetSize)
+			console.log(filteredSizes)
+			setSizes(filteredSizes)
+		}else{
+			setSizes([...sizes, ...[targetSize]])
+		}
+	}
+	const calcButtonCss = (type, size, button) => {
+		const sizesMap = {
+			'large': 'btn-lg',
+			'normal': '',
+			'medium': 'btn-md',
+			'small': 'btn-sm',
+		}
+		size = sizesMap[size];
+		return `btn ${size} btn-${button}${type && '-'+type} capitalize ${shadow ? `btn-${button}-shadow` : ''} ${rounded ? `btn-rounded` : ''}`
+	}
+	const copyButtonCss = (type, size, button) => {
+		let css = calcButtonCss(type, size, button);
+		return css.replace("capitalize", "")
+	}
+	const mapButtons = (type) => {
+		return (
+			<div className="flex flex--column">
+				{	sizes.map((size, idx) => {
+						return (
+							<div className="mtop--20 card flex__min-50" key={`type__${idx}`}>
+								<div className="card__title capitalize">{size} Size</div>
+								<div className="mtop--20 buttons__wrapper">
+								{ availableButtons.map( (button, idx) => {
+										return (	
+											<>
+												<CopyToClipboard text={copyButtonCss(type, size, button)}>
+													<button key={`button__${type}__${idx}`} className={calcButtonCss(type, size, button)}>
+														<div className="mainText">{button}</div>
+														<div className="copyText">Click & copy</div>
+													</button>
+												</CopyToClipboard>
+											</>
+										)
+									})							
+								}
+								</div>
+							</div>
+						)
+					})
+				}
+			</div>
+		)
+		
+	}
+	useEffect(() => {
+		setSizes(['normal'])
+	}, [])
+	return (
+		<div className="page__content flex flex--row">
+			<div className="page__content-left card card__bordered card__transparent">
+				<label className="text--bold mleft--10">Default</label>
+				{ mapButtons('') }
+				<label className="text--bold mleft--10">Soft</label>
+				{ mapButtons('soft') }
+				<label className="text--bold mleft--10">Bordered</label>
+				{ mapButtons('outline') }
+			</div>
+			<div className="page__content-right">
+				<div className="card card__glass">
+					<div>
+						<label className="text--muted">Filters</label>
+						<div className="form__group">
+							<label>Size</label>
+							<div className="btn__group btn__group-rounded">
+								<div className={getActiveSizeCss('large')} onClick={() => addSize('large')}>Large</div>
+								<div className={getActiveSizeCss('normal')} onClick={() => addSize('normal')}>Normal</div>
+								<div className={getActiveSizeCss('medium')} onClick={() => addSize('medium')}>Medium</div>
+								<div className={getActiveSizeCss('small')} onClick={() => addSize('small')}>Small</div>
+							</div>
+						</div>
+						<div className="form__group">
+							<label>Shadow</label>
+							<div className="btn__group-rounded">
+								<div className={ !shadow ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setShadow(true)}>Yes</div>
+								<div className={ shadow ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setShadow(false)}>No</div>
+							</div>
+						</div>
+						<div className="form__group">
+							<label>Rounded</label>
+							<div className="btn__group-rounded">
+								<div className={ !rounded ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setRounded(true)}>Yes</div>
+								<div className={ rounded ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setRounded(false)}>No</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

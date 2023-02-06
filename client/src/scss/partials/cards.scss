@@ -2,13 +2,12 @@
 .card{
     width: auto;
     height: auto;
-    display: flex;
-    flex-direction: column;
     padding: 15px;
     border-radius: var(--radius);
     background: var(--light);
     margin: 10px;
     position: relative;
+    word-break: break-word;
 }
 .card__glass{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -23,4 +22,8 @@
 }
 .card--100{
     width: 100%;
+}
+.card__active{
+    border: 2px solid RGBA(var(--primary-rgb) / 50%);
+    box-shadow: 0 5px 10px rgba(#000, 0.1), 0 0 0 4px  RGBA(var(--primary-rgb) / 20%);
 }

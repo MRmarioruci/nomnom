@@ -4,7 +4,8 @@
     padding: 10px;
     display: flex;
     flex-direction: row;
-    background: var(--light);
+    background: var(--primary);
+    position: relative;
 }
 .menu__static{
     position: fixed;
@@ -30,4 +31,7 @@
     flex-direction: column;
     right: 0;
     top: 0;
+}
+.menu__bordered{
+    border-bottom: 1px solid RGBA(var(--textColor-rgb) / 10%);
 }

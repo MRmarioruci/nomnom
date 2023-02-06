@@ -1,69 +1,89 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './scss/main.scss';
 import Buttons from './components/Buttons'
-import ThemeSwitch from './components/ThemeSwitch'
+import Typography from './components/Typography'
+import ThemePicker from './components/ThemePicker'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
+	//const location = useLocation();
+	
+	useEffect(() => {
+	}, [])
 	return (
 		<div className="page">
-			<header className="menu transparent justify--center text--center">
-				<div className="">
-					<div className="logo">
-						<div className="logo__sub">
-							Nom<b className="text--normal">Nom</b>.sty<span className="material-icons font--25 vm--align" style={{display: 'inline'}}>format_paint</span>e </div>
-						<div className="logo__overlay"></div>
-					</div>
-					<div className="theme__switch">
-						<ThemeSwitch />
-					</div>
-					<div className="tabs float--right">
-						<div className="tabs__item tabs__item-md">Buttons</div>
-						<div className="tabs__item tabs__item-md">Cards</div>
-						<div className="tabs__item tabs__item-md">Forms</div>
-						<div className="tabs__item tabs__item-active tabs__item-md">Menu's</div>
-					</div>
+			<div className="menu transparent menu__bordered">
+				<div className="logo">
+					<div className="logo__sub">
+						Nom<b className="text--normal">Nom</b>.sty<span className="material-icons font--25 vm--align" style={{display: 'inline'}}>format_paint</span>e </div>
+					<div className="logo__overlay"></div>
 				</div>
-			</header>
-			<div className="page__content">
-				<div className="page__content-left card card__bordered card__transparent">
-					<Buttons />
-				</div>
-				<div className="page__content-right">
-					<label className="text--bold mleft--10">Customize</label>
-					<div className="card card__glass">
-						<div>
-							<label className="text--muted">General</label>
-						</div>
-						<div>
-							<label className="text--muted">Button Specific</label>
-							<div className="form__group">
-								<label>Size</label>
-								<div className="flex flex--row">
-									<div className="btn btn-light btn-md">Large</div>
-									<div className="btn btn-primary-soft btn-md">Normal</div>
-									<div className="btn btn-light btn-md">Medium</div>
-									<div className="btn btn-light btn-md">Small</div>
-								</div>
-							</div>
-							<div className="form__group">
-								<label>Shadow</label>
-								<div className="flex flex--row">
-									<div className="btn btn-light btn-md">Yes</div>
-									<div className="btn btn-primary-soft btn-md">No</div>
-								</div>
-							</div>
-							<div className="form__group">
-								<label>Rounded</label>
-								<div className="flex flex--row">
-									<div className="btn btn-light btn-md">Yes</div>
-									<div className="btn btn-primary-soft btn-md">No</div>
-								</div>
-							</div>
-						</div>
+				<div className="tabs float--right">
+					<a className="tabs__item tabs__item-md tabs__item-active" href="/Typography">
+						{/* <span className="material-icons font--20 vm--align">
+							font_download
+						</span> */}
+						Typography
+					</a>
+					<a className="tabs__item tabs__item-md" href="/Button">
+						{/* <span className="material-icons font--20 vm--align">
+							smart_button
+						</span> */}
+						Button
+					</a>
+					<a className="tabs__item tabs__item-md" href="/Form">
+						{/* <span className="material-icons font--20 vm--align">
+							dns
+						</span> */}
+						Form
+					</a>
+					<a className="tabs__item tabs__item-md" href="/Card">
+						{/* <span className="material-icons font--20 vm--align">
+							view_agenda
+						</span> */}
+						Card
+					</a>
+					<a className="tabs__item tabs__item-md" href="/Table">
+						{/* <span className="material-icons font--20 vm--align">
+							table_rows
+						</span> */}
+						Table
+					</a>
+					<a className="tabs__item tabs__item-md" href="/Modal">
+						{/* <span className="material-icons font--20 vm--align">
+							call_to_action
+						</span> */}
+						Modal
+					</a>
+					<a className="tabs__item tabs__item-md" href="/Menu">
+						{/* <span className="material-icons font--20 vm--align">
+							menu
+						</span> */}
+						Menu
+					</a>
+					<a className="tabs__item tabs__item-md" href="/Helper">
+						{/* <span className="material-icons font--20 vm--align">
+							widgets
+						</span> */}
+						Helpers
+					</a>
+					<div className="tabs__item tabs__item-md" href="/Download">
+						<span className="material-icons font--20 vm--align">
+							download
+						</span>
+						Download
 					</div>
 				</div>
 			</div>
-
+			<ThemePicker />
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<Buttons />} />
+					<Route path="/Typography" element={<Typography />} />
+					<Route path="/Button" element={<Buttons />} />
+				</Routes>
+			</BrowserRouter>
 		</div>
 	);
 }
