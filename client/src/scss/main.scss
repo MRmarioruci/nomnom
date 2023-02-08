@@ -62,10 +62,10 @@ a{
 	//background: linear-gradient(-45deg, var(--primary),  var(--light), var(--danger));
 	//background-size: 400% 400%;
 	//animation: gradient 30s ease infinite;
-	
+
 	.page__content{
 		width: 100%;
-		
+
 		.page__content-left{
 			flex-basis: 75%;
 		}
@@ -84,6 +84,38 @@ a{
 			background-position: 0% 50%;
 		}
 	}
+	.page__wrapper{
+		display: flex;
+		flex-direction: row;
+
+		.page__wrapper-sidebar{
+			width: 180px;
+			background: var(--light);
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			height: 98%;
+			padding-top: 10px;
+			border-radius: var(--radius);
+
+			.tabs__item{
+				.material-icons{
+					display: none;
+				}
+			}
+			.tabs__item-active{
+				.material-icons{
+					display: inline-block;
+					margin-left: -5px;
+					margin-right: 5px;
+				}
+			}
+		}
+		.page__wrapper-content{
+			margin-left: 190px;
+			width: calc(100% - 190px);
+		}
+	}
 }
 .logo{
 	position: relative;
@@ -91,26 +123,31 @@ a{
 	font-weight: bold;
 	font-family: 'Stick No Bills', sans-serif;
 	min-height: 45px;
-	min-width: 180px;
-	
+	width: 130px;
+	margin-left: 10px;
+
 	.logo__sub{
-		font-size: 30px;
+		font-size: 20px;
 		position: absolute;
 		top: 0px;
 		left: 50%;
 		transform: translate(-50%, 0);
 		z-index: 2;
+		display: flex;
+		flex-direction: row;
 	}
 	.logo__overlay{
 		color: transparent;
 		-webkit-text-stroke-width: 2px;
 		-webkit-text-stroke-color: var(--light);
-		font-size: 30px;
+		font-size: 20px;
 		position: absolute;
 		top: -2px;
 		left: 50%;
 		transform: translate(-50%, 0);
 		z-index: 1;
+		display: flex;
+		flex-direction: row;
 	}
 }
 .card__title{
@@ -128,7 +165,9 @@ a{
 }
 .themepicker__color{
 	margin: 0px;
-	margin-left: -5px;
+	margin-left: 1px;
+	width: 20px;
+	height: 20px;
 	border: 1px solid RGBA(var(--textColor-rgb) / 20%);
 	transition: all .2s ease-in-out;
 
@@ -174,7 +213,7 @@ a{
 		height: 50px;
 		padding: 15px;
 		text-align: center;
-		color: var(--secondaryTextColor);
+		color: var(--textColor);
 		text-transform: uppercase;
 		font-weight: bold;
 
@@ -211,4 +250,8 @@ a{
 		}
 	}
 
+}
+.theme__picker-modal{
+	height: calc(100% - 80px);
+	margin-top: 80px;
 }

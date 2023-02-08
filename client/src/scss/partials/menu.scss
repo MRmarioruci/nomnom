@@ -35,3 +35,8 @@
 .menu__bordered{
     border-bottom: 1px solid RGBA(var(--textColor-rgb) / 10%);
 }
+.menu__sidebar{
+    flex-basis: 150px;
+    display: flex;
+    flex-direction: column;
+}

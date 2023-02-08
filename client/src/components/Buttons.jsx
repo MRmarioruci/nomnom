@@ -11,9 +11,9 @@ function Buttons() {
 		let o = 'btn btn-md ';
 		let f = sizes.filter( size => size == targetSize)
 		if(f.length > 0){
-			o += 'btn-inverted';
+			o += 'btn-primary-3d';
 		}else{
-			o += 'btn-secondary';
+			o += 'btn-secondary btn-secondary-bordered';
 		}
 		return o;
 	}
@@ -102,22 +102,22 @@ function Buttons() {
 						<div className="form__group">
 							<label>Shadow</label>
 							<div className="btn__group-rounded">
-								<div className={ !shadow ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setShadow(true)}>Yes</div>
-								<div className={ shadow ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setShadow(false)}>No</div>
+								<div className={ !shadow ? 'btn btn-secondary btn-md' : 'btn btn-primary-3d btn-md'} onClick={() => setShadow(true)}>Yes</div>
+								<div className={ shadow ? 'btn btn-secondary btn-md' : 'btn btn-primary-3d btn-md'} onClick={() => setShadow(false)}>No</div>
 							</div>
 						</div>
 						<div className="form__group">
 							<label>Rounded</label>
 							<div className="btn__group-rounded">
-								<div className={ !rounded ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setRounded(true)}>Yes</div>
-								<div className={ rounded ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setRounded(false)}>No</div>
+								<div className={ !rounded ? 'btn btn-secondary btn-md' : 'btn btn-primary-3d btn-md'} onClick={() => setRounded(true)}>Yes</div>
+								<div className={ rounded ? 'btn btn-secondary btn-md' : 'btn btn-primary-3d btn-md'} onClick={() => setRounded(false)}>No</div>
 							</div>
 						</div>
 						<div className="form__group">
 							<label>Bordered</label>
 							<div className="btn__group-rounded">
-								<div className={ !bordered ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setBordered(true)}>Yes</div>
-								<div className={ bordered ? 'btn btn-secondary btn-md' : 'btn btn-inverted btn-md'} onClick={() => setBordered(false)}>No</div>
+								<div className={ !bordered ? 'btn btn-secondary btn-md' : 'btn btn-primary-3d btn-md'} onClick={() => setBordered(true)}>Yes</div>
+								<div className={ bordered ? 'btn btn-secondary btn-md' : 'btn btn-primary-3d btn-md'} onClick={() => setBordered(false)}>No</div>
 							</div>
 						</div>
 					</div>

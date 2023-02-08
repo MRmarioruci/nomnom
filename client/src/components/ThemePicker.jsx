@@ -21,7 +21,6 @@ function ThemePicker(){
     }
 	const [background, setBackground] = useState();
 	const [textColor, setextColor] = useState();
-	const [secondaryTextColor, setSecondaryTextColor] = useState();
 	const [primary, setPrimary] = useState();
 	const [secondary, setSecondary] = useState();
 	const [light, setLight] = useState();
@@ -34,7 +33,6 @@ function ThemePicker(){
 			name: 'light',
 			background: '#EFF5F5',
 			textColor: '#000D25',
-			secondaryTextColor: '#F6F8FF',
 			primary: '#1D9BF0',
 			secondary: '#EFF5F5',
 			light: '#fff',
@@ -46,7 +44,6 @@ function ThemePicker(){
 			name: 'dark',
 			background: '#0d1117',
 			textColor: '#fff',
-			secondaryTextColor: '#fff',
 			primary: '#1D9BF0',
 			secondary: '#0d1117',
 			light: '#161b22',
@@ -58,7 +55,6 @@ function ThemePicker(){
 			name: 'navy',
 			background: '#0E273C',
 			textColor: '#fff',
-			secondaryTextColor: '#fff',
 			primary: '#1D9BF0',
 			secondary: '#0d1117',
 			light: '#161b22',
@@ -102,9 +98,6 @@ function ThemePicker(){
 			case 'textColor':
 				root.style.setProperty('--textColor', textColor)
 			break;
-			case 'secondaryTextColor':
-				root.style.setProperty('--secondaryTextColor', secondaryTextColor)
-			break;
 			case 'primary':
 				root.style.setProperty('--primary', primary)
 			break;
@@ -133,7 +126,6 @@ function ThemePicker(){
 	useEffect(() => {
 		setBackground(getComputedStyle(document.documentElement).getPropertyValue('--background'))
 		setextColor(getComputedStyle(document.documentElement).getPropertyValue('--textColor'))
-		setSecondaryTextColor(getComputedStyle(document.documentElement).getPropertyValue('--secondaryTextColor'))
 		setPrimary(getComputedStyle(document.documentElement).getPropertyValue('--primary'))
 		setSecondary(getComputedStyle(document.documentElement).getPropertyValue('--secondary'))
 		setLight(getComputedStyle(document.documentElement).getPropertyValue('--light'))
@@ -144,26 +136,23 @@ function ThemePicker(){
 	}, [theme])
 	return (
 		<>
-			{ !customizationModal &&
-				<div onClick={() => setCustomizationModal(true)} className="btn btn-secondary text--left">
-					<div className="flex flex--row">
-						<div className="btn btn-circle btn-sm themepicker__color" style={{background: background}}></div>
-						<div className="btn btn-circle btn-sm themepicker__color" style={{background: textColor}}></div>
-						<div className="btn btn-circle btn-sm themepicker__color" style={{background: secondaryTextColor}}></div>
-						<div className="btn btn-circle btn-sm themepicker__color" style={{background: primary}}></div>
-						<div className="btn btn-circle btn-sm themepicker__color" style={{background: secondary}}></div>
-						<div className="btn btn-circle btn-sm themepicker__color" style={{background: light}}></div>
-						<div className="btn btn-circle btn-sm themepicker__color" style={{background: danger}}></div>
-						<div className="btn btn-circle btn-sm themepicker__color" style={{background: warning}}></div>
-					</div>
-					<label className="font--12 capitalize">
-						{theme} Theme | <span className="text--muted">Click & edit</span>
-					</label>
+			<div onClick={() => setCustomizationModal(true)} className="btn btn-transparent text--left" disabled={customizationModal}>
+				<div className="flex flex--row">
+					<div className="btn btn-md themepicker__color" style={{background: background}}></div>
+					<div className="btn btn-md themepicker__color" style={{background: textColor}}></div>
+					<div className="btn btn-md themepicker__color" style={{background: primary}}></div>
+					<div className="btn btn-md themepicker__color" style={{background: secondary}}></div>
+					<div className="btn btn-md themepicker__color" style={{background: light}}></div>
+					<div className="btn btn-md themepicker__color" style={{background: danger}}></div>
+					<div className="btn btn-md themepicker__color" style={{background: warning}}></div>
 				</div>
-			}
+				<label className="font--12 capitalize">
+					{theme} Theme | <span className="text--muted">Click & edit</span>
+				</label>
+			</div>
 			{ customizationModal &&
-				<div className="modal-overlay active modal__right">
-					<div className="modal active modal--lg modal__right">
+				<div className="modal-overlay active modal__right modal__overlay-transparent theme__picker-modal">
+					<div className="modal active modal--sm modal__right">
 						<div className="modal__header">
 							<div className="modal__header-title">
 								Theme Creator
@@ -177,14 +166,13 @@ function ThemePicker(){
 						<div className="modal-content">
 							<div className="modal__body text--left">
 								<div className="card card__bordered">
-									<label className="text--bold">Pick a template theme</label>
+									<label className="text--bold">Pick one of our themes</label>
 									<div className="mtop--20 theme__preset-wrapper">
 										{ availableThemes.map((th, idx) => {
 											return (
 												<div key={`theme_${idx}`} className={ th.name == theme ? 'theme__preset theme__preset-active' : 'theme__preset'} onClick={() => changeTheme(th.name)}>
 													<div className="btn btn-noHover" style={{background: th.background}}></div>
 													<div className="btn btn-noHover" style={{background: th.textColor}}></div>
-													<div className="btn btn-noHover" style={{background: th.secondaryTextColor}}></div>
 													<div className="btn btn-noHover" style={{background: th.primary}}></div>
 													<div className="btn btn-noHover" style={{background: th.secondary}}></div>
 													<div className="btn btn-noHover" style={{background: th.light}}></div>
@@ -210,12 +198,6 @@ function ThemePicker(){
 											Text Color
 										</label>
 										<input type="text" value={textColor} onBlur={(e) => update('textColor', e.target.value)} onChange={(e) => setextColor(e.target.value)} />
-									</div>
-									<div className="form__group">
-										<label className="text--bold">
-											Secondary Text Color
-										</label>
-										<input type="text" value={secondaryTextColor} onBlur={(e) => update('secondaryTextColor', e.target.value)} onChange={(e) => setSecondaryTextColor(e.target.value)} />
 									</div>
 									<div className="form__group">
 										<label className="text--bold">

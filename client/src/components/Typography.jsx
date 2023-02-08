@@ -23,7 +23,7 @@ function Typography() {
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">H1</div>
                         <div className="mtsop--20 buttons__wrapper">
-                            <h1 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h1>    
+                            <h1 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h1>
                         </div>
                     </div>
                     <div className="mtop--10 card">
@@ -62,7 +62,7 @@ function Typography() {
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">Label</div>
                         <div className="mtop--20 buttons__wrapper">
-                            <label className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</label>    
+                            <label className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</label>
                         </div>
                     </div>
                     <div className="mtop--10 card">
@@ -83,10 +83,12 @@ function Typography() {
 				<div className="card card__glass">
 					<div>
                         <div className="form__group">
-							<label>Sample Text</label>
-							<textarea type="text" placeholder="Type here..." value={sampleText} onChange={(e) => setSampleText(e.target.value) }>
-                            </textarea>
-						</div>
+                            <label>Sample text</label>
+                            <div className="input__wrap">
+                                <textarea placeholder="Type here..." value={sampleText} onChange={(e) => setSampleText(e.target.value) }></textarea>
+                                <span className="focus"></span>
+                            </div>
+                        </div>
                         <div className="form__group">
 							<label>Type</label>
 							<div className="pointer">
