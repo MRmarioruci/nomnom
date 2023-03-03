@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import CopyCodeToClipBoard from './misc/CopyCodeToClipBoard';
 
 function Typography() {
     const [sampleText, setSampleText] = useState('The quick brown fox...')
@@ -23,37 +23,49 @@ function Typography() {
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">H1</div>
                         <div className="mtsop--20 buttons__wrapper">
-                            <h1 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h1>
+                            <CopyCodeToClipBoard title="H1">
+                                <h1 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h1>
+                            </CopyCodeToClipBoard>
                         </div>
                     </div>
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">H2</div>
                         <div className="mtop--20 buttons__wrapper">
-                            <h2 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h2>
+                            <CopyCodeToClipBoard title="H2">
+                                <h2 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h2>
+                            </CopyCodeToClipBoard>
                         </div>
                     </div>
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">H3</div>
                         <div className="mtop--20 buttons__wrapper">
-                            <h3 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h3>
+                            <CopyCodeToClipBoard title="H3">
+                                <h3 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h3>
+                            </CopyCodeToClipBoard>
                         </div>
                     </div>
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">H4</div>
                         <div className="mtop--20 buttons__wrapper">
-                            <h4 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h4>
+                            <CopyCodeToClipBoard title="H4">
+                                <h4 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h4>
+                            </CopyCodeToClipBoard>
                         </div>
                     </div>
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">H5</div>
                         <div className="mtop--20 buttons__wrapper">
-                            <h5 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h5>
+                            <CopyCodeToClipBoard title="H5">
+                                <h5 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h5>
+                            </CopyCodeToClipBoard>
                         </div>
                     </div>
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">H6</div>
                         <div className="mtop--20 buttons__wrapper">
-                            <h6 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h6>
+                            <CopyCodeToClipBoard title="H6">
+                                <h6 className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</h6>
+                            </CopyCodeToClipBoard>
                         </div>
                     </div>
                 </div>
@@ -62,19 +74,25 @@ function Typography() {
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">Label</div>
                         <div className="mtop--20 buttons__wrapper">
-                            <label className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</label>
+                            <CopyCodeToClipBoard title="label">
+                                <label className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</label>
+                            </CopyCodeToClipBoard>
                         </div>
                     </div>
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">Paragraph</div>
                         <div className="mtop--20 buttons__wrapper">
-                            <p className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</p>
+                            <CopyCodeToClipBoard title="Paragraph">
+                                <p className={fontColor != 'normal' && 'text--'+fontColor}>{sampleText}</p>
+                            </CopyCodeToClipBoard>
                         </div>
                     </div>
                     <div className="mtop--10 card">
                         <div className="card__title capitalize">Link</div>
                         <div className="mtop--20 buttons__wrapper">
-                            <a>{sampleText}</a>
+                            <CopyCodeToClipBoard title="Link">
+                                <a>{sampleText}</a>
+                            </CopyCodeToClipBoard>
                         </div>
                     </div>
                 </div>

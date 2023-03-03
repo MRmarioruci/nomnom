@@ -10,7 +10,7 @@ function Sidebar() {
 		let o = 'tabs__item font--13 '
 		console.log(location)
 		if(page == location.pathname.replace('/', '')){
-			o += 'tabs__item-active tabs__item-activeTransparent'
+			o += 'tabs__sidebar-active btn btn__primary-soft btn__primary-shadow btn__md'
 		}
 		return o
 	}
@@ -50,17 +50,17 @@ function Sidebar() {
 					</span>
 					Form
 				</Link>
-				<Link to="/Card" className={getActivePage('Card')}>
-					<span className="material-icons font--20">
-						dashboard
-					</span>
-					Card
-				</Link>
 				<Link to="/Table" className={getActivePage('Table')}>
 					<span className="material-icons font--20">
 						toc
 					</span>
 					Table
+				</Link>
+				<Link to="/Card" className={getActivePage('Card')}>
+					<span className="material-icons font--20">
+						dashboard
+					</span>
+					Card
 				</Link>
 				<Link to="/Modal" className={getActivePage('Modal')}>
 					<span className="material-icons font--20">
@@ -68,21 +68,21 @@ function Sidebar() {
 					</span>
 					Modal
 				</Link>
-				<Link to="/Menu" className={getActivePage('Menu')}>
-					<span className="material-icons font--20">
-						ads_click
-					</span>
-					Menu
-				</Link>
 				<Link to="/Helpers" className={getActivePage('Helpers')}>
 					<span className="material-icons font--20">
 						widgets
 					</span>
 					Helpers
 				</Link>
+				<Link to="/Miscellanius" className={getActivePage('Helpers')}>
+					<span className="material-icons font--20">
+						widgets
+					</span>
+					Miscellanius
+				</Link>
 			</div>
 			<div className="text--center">
-				<Link to="/Download" className="btn btn-primary">
+				<Link to="/Download" className="btn btn__primary btn__100">
 					<span className="material-icons font--20 vm--align">
 						download
 					</span>

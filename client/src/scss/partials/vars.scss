@@ -5,13 +5,16 @@
 	--textColor: #000D25;
 	--textColor-rgb: 91 91 91;
 
+	--secondaryTextColor: #FFFFFF;
+	--secondaryTextColor-rgb: 255 255 255;
+
 	--primary: #3e64ff;
 	--primary-rgb: 62 100 255;
 
 	--secondary: #EFF5F5;
 	--secondary-rgb: 239 245 245;
 
-	--light: #fff;
+	--light: #FFFFFF;
 	--light-rgb: 255 255 255;
 
 	--success: #EBC7E8;
@@ -23,62 +26,71 @@
 	--warning: #FF9F29;
 	--warning-rgb: 255 159 41;
 
-	--radius: 2px;
+	--radius: 4px;
+	--borderRadiusRounded: 20px;
 	--fontFamily: 'Poppins', sans-serif;
 }
 [data-theme='dark']{
 	--background: #0d1117;
 	--background-rgb: 22 27 34;
 
-	--textColor: #fff;
+	--textColor: #FFFFFF;
 	--textColor-rgb: 255 255 255;
 
-	--primary: #3e64ff;
-	--primary-rgb: 62 100 255;
-
-	--secondary: #0d1117;
-	--secondary-rgb: 18 18 18;
+	--secondaryTextColor: #FFFFFF;
+	--secondaryTextColor-rgb: 255 255 255;
 
 	--light: #161b22;
 	--light-rgb: 13 17 23;
 
-	--success: #00BFA6;
-	--success-rgb: 0 191 166;
+	--primary: #6390FF;
+	--primary-rgb: 99 144 255;
 
-	--danger: #ef476f;
-	--danger-rgb: 245 0 87;
+	--secondary: #181622;
+	--secondary-rgb: 24 22 34;
 
-	--warning: #F9A826;
-	--warning-rgb: 249 168 38;
+	--success: #57CC98;
+	--success-rgb: 87 204 152;
 
-	--radius: 2px;
+	--danger: #F97476;
+	--danger-rgb: 249 116 118;
+
+	--warning: #F9B743;
+	--warning-rgb: 249 183 67;
+
+	--radius: 4px;
+	--borderRadiusRounded: 20px;
 	--fontFamily: 'Poppins', sans-serif;
 }
 [data-theme='navy']{
-	--background: #0E273C;
-	--background-rgb: 14 39 60;
+	--background: #FFFFFF;
+	--background-rgb: 255 255 255;
 
-	--textColor: #fff;
-	--textColor-rgb: 255 255 255;
+	--textColor: #081B4B;
+	--textColor-rgb: 8 27 75;
 
-	--primary: #D3BCCC;
-	--primary-rgb: 211 188 204;
+	--secondaryTextColor: #FFFFFF;
+	--secondaryTextColor-rgb: 255 255 255;
 
-	--secondary: #4A306D;
-	--secondary-rgb: 74 48 109;
+	--primary: #6390FF;
+	--primary-rgb: 99 144 255;
 
-	--light: #161b22;
-	--light-rgb: 13 17 23;
+	--secondary: #E3E8F4;
+	--secondary-rgb: 227 232 244;
 
-	--success: #E8D7F1;
-	--success-rgb: 232 215 241;
+	--light: #F7F7F8;
+	--light-rgb: 247 247 248;
 
-	--danger: #ef476f;
-	--danger-rgb: 245 0 87;
+	--success: #57CC98;
+	--success-rgb: 87 204 152;
 
-	--warning: #F9A826;
-	--warning-rgb: 249 168 38;
+	--danger: #F97476;
+	--danger-rgb: 249 116 118;
 
-	--radius: 2px;
+	--warning: #F9B743;
+	--warning-rgb: 249 183 67;
+
+	--radius: 4px;
+	--borderRadiusRounded: 20px;
 	--fontFamily: 'Poppins', sans-serif;
 }

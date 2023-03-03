@@ -46,11 +46,53 @@ table{
 	font-weight: bold;
 	background-color: RGBA(var(--secondary), 0.3);
 }
-.table__header-primary{
+.table__primary{
 	th{
 		background-color: var(--primary);
 	}
-
+	tr{
+		background: RGBA(var(--primary-rgb) / 10%);
+	}
+}
+.table__secondary{
+	th{
+		background-color: var(--secondary);
+	}
+	tr{
+		background: RGBA(var(--secondary-rgb) / 10%);
+	}
+}
+.table__inverted{
+	th{
+		background-color: var(--textColor);
+	}
+	tr{
+		background: RGBA(var(--textColor-rgb) / 10%);
+	}
+}
+.table__warning{
+	th{
+		background-color: var(--warning);
+	}
+	tr{
+		background: RGBA(var(--warning-rgb) / 10%);
+	}
+}
+.table__success{
+	th{
+		background-color: var(--success);
+	}
+	tr{
+		background: RGBA(var(--success-rgb) / 10%);
+	}
+}
+.table__danger{
+	th{
+		background-color: var(--danger);
+	}
+	tr{
+		background: RGBA(var(--danger-rgb) / 10%);
+	}
 }
 .table__content{
 	/* height:calc(100% - 300px);
